@@ -25,7 +25,7 @@
 
 .wrapper .song-info {
   padding-top: 6px;
-  font-size: 13px;
+  font-size: var(--font-size-small);
 }
 
 .wrapper .song-title {
@@ -56,6 +56,6 @@
 
 @media screen and (min-width: 480px) {
   .wrapper .song-info {
-    font-size: 16px;
+    font-size: var(--font-size-medium);
   }
 }

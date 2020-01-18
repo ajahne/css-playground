@@ -4,6 +4,8 @@
   --secondary-text-color:#777777;
   --song-number-text-color:#353535;
   --song-wrapper-border-color:#333333;
+  --font-size-small: 13px;
+  --font-size-medium: 16px;
 }
 
 html, body {
