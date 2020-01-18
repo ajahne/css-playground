@@ -1,3 +1,11 @@
+:root {
+  --main-background-color:black;
+  --main-text-color:white;
+  --secondary-text-color:#777777;
+  --song-number-text-color:#353535;
+  --song-wrapper-border-color:#333333;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -6,5 +14,5 @@ html, body {
 }
 
 body {
-  background-color: black;
+  background-color: var(--main-background-color);
 }
