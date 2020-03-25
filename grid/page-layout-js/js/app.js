@@ -45,8 +45,6 @@ function handler(songUrl) {
 }
 
 function getTemplate(props) {
-  const element = document.createElement('div');
-
   const template = `<div class="song-item-wrapper">
           <div class="song-number">${props.songNumber}</div>
           <img class="song-image" src='${props.icon}' onclick=handler('${props.url}')>
@@ -56,17 +54,14 @@ function getTemplate(props) {
           </div>
         </div>`
 
-  element.innerHTML = template;
-  element.songUrl = props.url;
-  return element
+  return template;
 };
 
 function addSongs() {
   //loop through array of songs and add to the Dom
   songs.forEach(function(element, index) {
     element.songNumber = ++index;
-    // container.innerHTML += getTemplate(element);
-    container.appendChild(getTemplate(element));
+    container.innerHTML += getTemplate(element);
   });
 
 };
