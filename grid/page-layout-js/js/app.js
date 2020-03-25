@@ -1,3 +1,10 @@
+// note, may need to wrap all of thse code to avoid global pollution
+//const app = {};
+//
+// app.handler = function(songUrl) {
+//
+// }
+
 const songs = [
   {
     title: "Super Amazing Song",
@@ -33,24 +40,33 @@ const songs = [
 
 const container = document.getElementById('content');
 
+function handler(songUrl) {
+  console.log(songUrl)
+}
+
 function getTemplate(props) {
+  const element = document.createElement('div');
+
   const template = `<div class="song-item-wrapper">
           <div class="song-number">${props.songNumber}</div>
-          <img class="song-image" src='${props.icon}'>
+          <img class="song-image" src='${props.icon}' onclick=handler('${props.url}')>
           <div class="song-info">
-            <div class="song-title">${props.title}</div>
-            <div class="song-artist">${props.artist}</div>
+            <div class="song-title" onclick=handler('${props.url}')>${props.title}</div>
+            <div class="song-artist" onclick=handler('${props.url}')>${props.artist}</div>
           </div>
         </div>`
 
-  return template;
+  element.innerHTML = template;
+  element.songUrl = props.url;
+  return element
 };
 
 function addSongs() {
   //loop through array of songs and add to the Dom
   songs.forEach(function(element, index) {
     element.songNumber = ++index;
-    container.innerHTML += getTemplate(element);
+    // container.innerHTML += getTemplate(element);
+    container.appendChild(getTemplate(element));
   });
 
 };
