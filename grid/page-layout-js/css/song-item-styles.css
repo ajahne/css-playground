@@ -22,6 +22,11 @@
   display: none;
 }
 
+.song-item-wrapper .song-image, .song-item-wrapper .song-title  {
+  cursor: pointer;
+}
+
+
 .song-item-wrapper .song-number, .song-item-wrapper .song-image {
   display: none;
 }
